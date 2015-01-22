@@ -42,8 +42,6 @@ public class Bank implements Strategy {
             final int previous = Inventory.getCount();
             Menu.sendAction(431, 1436, 0, 5064);
             Time.sleep(150);
-            Menu.sendAction(78, 7936, 0, 5064);
-            Time.sleep(150);
             Menu.sendAction(431, 7936, 0, 5064);
             Time.sleep(new SleepCondition() {
                 @Override
