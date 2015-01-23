@@ -41,12 +41,12 @@ public class Walk implements Strategy {
         }catch (NullPointerException | ArrayIndexOutOfBoundsException ignored){
 
         }
-        return Inventory.getCount() >= 28 || AFTER_TELEPORT.distanceTo() < 5 || (Inventory.getCount() == 0 && AFTER_TELEPORT.distanceTo() > 25);
+        return Inventory.getCount() >= 28 || AFTER_TELEPORT.distanceTo() < 5 || (Inventory.getCount() < 5 && AFTER_TELEPORT.distanceTo() > 25);
     }
 
     @Override
     public void execute() {
-        if (Inventory.getCount() == 0) {
+        if (Inventory.getCount() < 0) {
             if (teleporter != null && teleporter.getLocation().distanceTo() < 50) {
                 if (!walkTo(teleporter.getLocation())){
                     if (SceneObjects.getNearest(CLOSED_DOOR) != null && SceneObjects.getNearest(CLOSED_DOOR).length >= 1){
